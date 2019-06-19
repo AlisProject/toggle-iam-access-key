@@ -1,3 +1,5 @@
+[![CircleCI](https://circleci.com/gh/AlisProject/toggle-iam-access-key/tree/master.svg?style=svg)](https://circleci.com/gh/AlisProject/toggle-iam-access-key/tree/master)  
+
 SlackのOutgoing Webhookと組み合わせてIAMキーの有効/無効を切り替えるSlackコマンドを作成。
 
 # 準備
