@@ -1,0 +1,54 @@
+version: 2.1
+
+references:
+  setup_remote_docker: &setup_remote_docker
+    setup_remote_docker:
+      version: 18.09.3
+  only_master: &only_master
+    filters:
+      branches:
+        only:
+          - master
+
+executors:
+  default:
+    working_directory: ~/repo
+    docker:
+      - image: circleci/python:3.7.1-node
+
+jobs:
+  deploy:
+    executor:
+      name: default
+
+    steps:
+      - checkout
+
+      - <<: *setup_remote_docker
+
+      - restore_cache:
+          keys:
+            - v1-npm-dependencies-{{ checksum "package-lock.json" }}
+            - v1-npm-dependencies-
+
+      - run:
+          command: npm ci
+
+      - save_cache:
+          paths:
+            - ./node_modules
+          key: v1-npm-dependencies-{{ checksum "package-lock.json" }}
+
+      - deploy:
+          name: Deployment
+          command: |
+            npm run deploy:production
+
+
+workflows:
+  build-deploy:
+    jobs:
+      - deploy:
+          <<: *only_master
+          context: operation_tools_production_deployment
+

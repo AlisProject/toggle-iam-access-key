@@ -1,0 +1,19 @@
+{
+  "name": "toggle-iam-access-key",
+  "version": "0.0.1",
+  "description": "",
+  "author": "sot528",
+  "license": "MIT",
+  "main": "index.js",
+  "keywords": [],
+  "devDependencies": {
+    "serverless": "^1.45.1",
+    "serverless-python-requirements": "^4.3.0"
+  },
+  "scripts": {
+    "deploy": "yarn sls deploy",
+    "invoke": "yarn sls invoke",
+    "deploy:production": "yarn sls deploy --stage production",
+    "remove": "yarn sls remove"
+  }
+}
