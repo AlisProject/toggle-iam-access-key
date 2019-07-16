@@ -10,6 +10,9 @@ references:
         only:
           - master
 
+orbs:
+  aws-cli: circleci/aws-cli@0.1.13
+
 executors:
   default:
     working_directory: ~/repo
