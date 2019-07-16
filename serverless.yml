@@ -1,6 +1,6 @@
 service: toggle-iam-access-key
 
-frameworkVersion: ">=1.45.1 <2.0.0"
+frameworkVersion: ">=1.47.0 <2.0.0"
 
 custom:
   bucket: alis-toggle-iam-access-key-${opt:stage, 'dev'}
