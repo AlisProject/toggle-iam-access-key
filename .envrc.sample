@@ -1,3 +1,4 @@
+# https://qiita.com/sot528/items/9466125e9f37ad74e70e
 export SLACK_ACCESS_TOKENS=xxxxx,xxxxx,xxxxx
 export ACCEPTED_SLACK_USERS=UXXXXXXXX,UXXXXXXXX
 export AWS_IAM_USER_NAME=circleci
