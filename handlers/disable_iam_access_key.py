@@ -1,13 +1,18 @@
 import os
 import json
 import boto3
+import logging
 import urllib
 
 iam = boto3.resource('iam')
+logger = logging.getLogger()
+logger.setLevel(logging.INFO)
 
 
 # TODO: リファクタリング
 def handler(event, context):
+    logger.info(event)
+
     if validate(event):
         iam.AccessKey(os.environ['AWS_IAM_USER_NAME'], os.environ['AWS_IAM_ACCESS_KEY_ID']).deactivate()
 
