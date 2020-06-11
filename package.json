@@ -7,13 +7,13 @@
   "main": "index.js",
   "keywords": [],
   "devDependencies": {
-    "serverless": "^1.47.0",
+    "serverless": "^1.72.0",
     "serverless-python-requirements": "^4.3.0"
   },
   "scripts": {
-    "deploy": "yarn sls deploy",
-    "invoke": "yarn sls invoke",
-    "deploy:production": "yarn sls deploy --stage production",
-    "remove": "yarn sls remove"
+    "deploy": "npx sls deploy",
+    "invoke": "npx sls invoke",
+    "deploy:production": "npx sls deploy --stage production",
+    "remove": "npx sls remove"
   }
 }
