@@ -26,6 +26,11 @@ provider:
     AWS_IAM_ACCESS_KEY_ID: ${env:AWS_IAM_ACCESS_KEY_ID}
   layers:
     - {Ref: PythonRequirementsLambdaLayer}
+  tracing:
+    apiGateway: true
+    lambda: true
+  logs:
+    restApi: true
   iamRoleStatements:
     - Effect: "Allow"
       Action:
